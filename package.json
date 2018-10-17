@@ -1,0 +1,27 @@
+{
+  "name": "qcm-portfolio",
+  "version": "0.0.1",
+  "description": "Quentin McCarthy's Portfolio Website",
+  "main": "index.php",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuentinMcCarthy/portfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Quentin McCarthy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuentinMcCarthy/portfolio/issues"
+  },
+  "homepage": "https://github.com/QuentinMcCarthy/portfolio#readme",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "jit-grunt": "^0.10.0",
+    "time-grunt": "^1.4.0"
+  }
+}
