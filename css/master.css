@@ -1,9 +1,18 @@
+/* Table of Contents:
+	1.0:- Base styles
+	2.0:- Sidebar
+	3.0:- User Profile Image
+	4.0:- FontAwesome Icon Styles
+*/
+
+/* 1.0:- Base Styles */
 body {
 	font-family: Palatino, "Times New Roman", Times, serif;
 }
 
 h1 {
 	font-size: 2rem;
+	/* Arimo google font specified in header.php */
 	font-family: Arimo, Helvetica, Arial, sans-serif;
 }
 
@@ -22,14 +31,19 @@ a:hover {
 	color: #007bff;
 }
 
+
+/* 2.0:- Sidebar */
 #userSidebar {
 	max-width: 450px;
 }
 
+/* 3.0:- User profile image */
 #userImage {
 	border-radius: 100%;
 }
 
+
+/* 4.0:- FontAwesome Icon Styles */
 .fa-behance-square {
 	color: #1476F7;
 }
