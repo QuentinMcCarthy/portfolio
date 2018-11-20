@@ -18,12 +18,12 @@
 					</div>
 				</div>
 
-				<!-- Social media or other external links -->
+				<!-- Footer, contains social media links and meta login -->
 				<div class="row">
 					<div class="col">
 						<hr>
+						<a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt fa-2x"></i></a>
 						<a href="https://www.behance.net/qmccarthy9cc69"><i class="fab fa-behance-square fa-2x"></i></a>
-
 					</div>
 				</div>
 			</div>
@@ -65,6 +65,22 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modal Title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save Changes</button>
 				</div>
 			</div>
 		</div>
