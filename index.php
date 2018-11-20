@@ -7,7 +7,7 @@
 					<div class="col d-flex align-items-center justify-content-between">
 						<img id="userImage" class="img-fluid" src="http://placehold.it/150x150" alt="User Portrait">
 
-						<h1>Quentin M<sup>c</sup>Carthy</h1>
+						<h1 id="userName">Quentin M<sup>c</sup>Carthy</h1>
 					</div>
 				</div>
 

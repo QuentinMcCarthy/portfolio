@@ -10,10 +10,16 @@ body {
 	font-family: Palatino, "Times New Roman", Times, serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
 h1 {
 	font-size: 2rem;
-	/* Arimo google font specified in header.php */
-	font-family: Arimo, Helvetica, Arial, sans-serif;
 }
 
 sup {
@@ -35,6 +41,11 @@ a:hover {
 /* 2.0:- Sidebar */
 #userSidebar {
 	max-width: 450px;
+}
+
+#userName {
+	/* Arimo google font specified in header.php */
+	font-family: Arimo, Helvetica, Arial, sans-serif;
 }
 
 /* 3.0:- User profile image */
