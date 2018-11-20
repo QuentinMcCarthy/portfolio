@@ -22,7 +22,8 @@
 				<div class="row">
 					<div class="col">
 						<hr>
-						<a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a>
+						<a href="https://www.behance.net/qmccarthy9cc69"><i class="fab fa-behance-square fa-2x"></i></a>
+
 					</div>
 				</div>
 			</div>

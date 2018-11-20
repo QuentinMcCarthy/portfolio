@@ -1,6 +1,10 @@
+body {
+	font-family: Palatino, "Times New Roman", Times, serif;
+}
+
 h1 {
 	font-size: 2rem;
-	font-family: Arimo, Arial, Helvetica, sans-serif;
+	font-family: Arimo, Helvetica, Arial, sans-serif;
 }
 
 sup {
@@ -24,4 +28,8 @@ a:hover {
 
 #userImage {
 	border-radius: 100%;
+}
+
+.fa-behance-square {
+	color: #1476F7;
 }
