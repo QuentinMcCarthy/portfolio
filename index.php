@@ -68,34 +68,4 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<!-- Modal Header -->
-				<div class="modal-header">
-					<h5 class="modal-title">Modal Title</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-				</div>
-
-				<!-- Modal Body -->
-				<div class="modal-body">
-					<form action="index.php" method="post">
-						<div class="form-group">
-							<label for="username">Username</label>
-							<input type="text" name="username" class="form-control" value="">
-						</div>
-
-						<div class="form-group">
-							<label for="password">Password</label>
-							<input type="password" name="password" class="form-control" value="">
-						</div>
-
-						<button type="button" class="btn btn-secondary">Cancel</button>
-						<button type="submit" name="submit" class="btn btn-primary">Login</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
 <?php require "./includes/footer.php" ?>
