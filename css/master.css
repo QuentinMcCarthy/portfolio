@@ -1,8 +1,9 @@
 /* Table of Contents:
 	1.0:- Base styles
-	2.0:- Sidebar
-	3.0:- User Profile Image
-	4.0:- FontAwesome Icon Styles
+	2.0:- Global styles
+	3.0:- Sidebar
+	4.0:- User Profile Image
+	5.0:- FontAwesome Icon Styles
 */
 
 /* 1.0:- Base Styles */
@@ -42,7 +43,15 @@ a:hover {
 }
 
 
-/* 2.0:- Sidebar */
+/* 2.0:- Global Styles */
+.post-errors-list {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+
+/* 3.0:- Sidebar */
 #userSidebar {
 	max-width: 450px;
 }
@@ -52,13 +61,14 @@ a:hover {
 	font-family: Arimo, Helvetica, Arial, sans-serif;
 }
 
-/* 3.0:- User profile image */
+
+/* 4.0:- User profile image */
 #userImage {
 	border-radius: 100%;
 }
 
 
-/* 4.0:- FontAwesome Icon Styles */
+/* 5.0:- FontAwesome Icon Styles */
 .fa-behance-square {
 	color: #1476F7;
 }

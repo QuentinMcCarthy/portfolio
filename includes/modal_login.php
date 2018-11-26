@@ -47,7 +47,7 @@
 			<div class="modal-body">
 				<?php if($_POST && !empty($errors)): ?>
 					<div class="alert alert-danger" role="alert">
-						<ul>
+						<ul class="post-errors-list">
 							<?php foreach($errors as $error): ?>
 								<li><?= $error; ?></li>
 							<?php endforeach; ?>
