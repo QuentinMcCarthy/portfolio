@@ -8,7 +8,7 @@
 	$dotenv = new Dotenv\Dotenv(__DIR__."/.."); $dotenv->load();
 	$baseURL = getenv("PROJECT_URL");
 
-	require "./includes/connection.php";
+	require "./includes/db_connect.php";
 
 	session_start();
 ?>
@@ -16,6 +16,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<base href="<?= $baseURL; ?>">
+
 		<meta charset="utf-8">
 		<title>Quentin McCarthy's Portfolio</title>
 
