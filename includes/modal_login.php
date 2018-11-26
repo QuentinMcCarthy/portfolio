@@ -1,5 +1,5 @@
 <?php
-	if($_POST){
+	if($_POST && isset($_POST["login"])){
 		$errors = array();
 
 		extract($_POST);
@@ -39,7 +39,7 @@
 		<div class="modal-content">
 			<!-- Modal Header -->
 			<div class="modal-header">
-				<h5 class="modal-title">Modal Title</h5>
+				<h5 class="modal-title">Login</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
 			</div>
 
@@ -66,7 +66,7 @@
 						<input type="password" name="password" class="form-control" value="">
 					</div>
 
-					<input type="hidden" name="loginmodal" value="true">
+					<input type="hidden" name="login" value="true">
 
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 					<button type="submit" name="submit" class="btn btn-primary">Login</button>

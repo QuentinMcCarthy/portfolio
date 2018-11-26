@@ -22,7 +22,11 @@
 				<div class="row">
 					<div class="col">
 						<hr>
-						<a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt fa-2x"></i></a>
+						<?php if(empty($_SESSION["username"])): ?>
+							<a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt fa-2x"></i></a>
+						<?php else: ?>
+							<a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+						<?php endif; ?>
 						<a href="https://www.behance.net/qmccarthy9cc69"><i class="fab fa-behance-square fa-2x"></i></a>
 					</div>
 				</div>
