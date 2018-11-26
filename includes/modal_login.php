@@ -23,7 +23,7 @@
 		} elseif($result && mysqli_affected_rows($dbc) == 0){
 			array_push($errors, "Incorrect username");
 		} else{
-			array_push($errors, "An error has ocurred, please try again later (Error DBC_SEL_FAIL)");
+			array_push($errors, "An error has ocurred, please try again later (DBC_SEL_FAIL)");
 		}
 
 		if ( empty( $errors ) ) {
@@ -45,6 +45,16 @@
 
 			<!-- Modal Body -->
 			<div class="modal-body">
+				<?php if($_POST && !empty($errors)): ?>
+					<div class="alert alert-danger" role="alert">
+						<ul>
+							<?php foreach($errors as $error): ?>
+								<li><?= $error; ?></li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
+
 				<form action="index.php" method="post">
 					<div class="form-group">
 						<label for="username">Username</label>
@@ -55,6 +65,8 @@
 						<label for="password">Password</label>
 						<input type="password" name="password" class="form-control" value="">
 					</div>
+
+					<input type="hidden" name="loginmodal" value="true">
 
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 					<button type="submit" name="submit" class="btn btn-primary">Login</button>

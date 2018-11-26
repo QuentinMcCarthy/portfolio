@@ -1,4 +1,4 @@
-<?php require "./includes/header.php" ?>
+<?php require "./includes/header.php"; ?>
 	<div class="container-fluid pt-5 pb-5">
 		<div class="row">
 			<!-- Sidebar details for the user -->
@@ -68,4 +68,4 @@
 			</div>
 		</div>
 	</div>
-<?php require "./includes/footer.php" ?>
+<?php require "./includes/footer.php"; ?>
