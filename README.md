@@ -62,5 +62,13 @@ ALTER TABLE `sidebar_info` ADD PRIMARY KEY (`id`);
 ALTER TABLE `sidebar_info` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 ```
 
+These commands are for creating the 'projects' table, which will contain the code for the information for each project.
+
+```sql
+CREATE TABLE `projects` (`id` tinyint(6) UNSIGNED NOT NULL, `name` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `image` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `description` varchar(1000) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ALTER TABLE `projects` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `image` (`image`);
+ALTER TABLE `projects` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+```
+
 If any of these commands fail, and you cannot confirm that they succeeded despite the error, do not continue.<br />
 Create an issue upon the repository https://github.com/QuentinMcCarthy/portfolio/issues

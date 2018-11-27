@@ -50,14 +50,18 @@
 			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (1, 'userImage', 'default-userimage.png'); ";
 			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (2, 'userName', 'Lorem Ipsum'); ";
 			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (3, 'userContent', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'); ";
-			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (4, 'userBehance', 'https://www.behance.net/'); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (4, 'userBehance', ''); ";
 			$sql .= "ALTER TABLE `sidebar_info` ADD PRIMARY KEY (`id`); ";
 			$sql .= "ALTER TABLE `sidebar_info` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4; ";
+
+			$sql .= "CREATE TABLE `projects` (`id` tinyint(6) UNSIGNED NOT NULL, `name` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `image` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `description` varchar(1000) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1; ";
+			$sql .= "ALTER TABLE `projects` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `image` (`image`); ";
+			$sql .= "ALTER TABLE `projects` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT; ";
 
 			$result = mysqli_multi_query($dbc, $sql);
 
 			if($result){
-				header("Refresh:2; URL=./index.php");
+				header("Refresh:1; URL=./index.php");
 			} else{
 				die("An error has occurred (DBC_INIT_FAIL)");
 			}
