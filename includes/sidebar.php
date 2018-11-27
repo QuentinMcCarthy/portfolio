@@ -81,7 +81,10 @@
 			<?php else: ?>
 				<a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-2x"></i></a>
 			<?php endif; ?>
-			<a id="userBehance" href="<?= $userBehance ?>"><i class="fab fa-behance-square fa-2x"></i></a>
+
+			<?php if(strlen($userBehance) > 0): ?>
+				<a id="userBehance" href="<?= $userBehance ?>"><i class="fab fa-behance-square fa-2x"></i></a>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
