@@ -1,6 +1,6 @@
-<?php require "./includes/header.php"; ?>
-
 <?php
+	require "./includes/header.php";
+
 	if($_POST){
 		extract($_POST);
 
@@ -45,7 +45,7 @@
 			$sql .= "`id` tinyint(6) UNSIGNED NOT NULL, ";
 			$sql .= "`email` varchar(254) CHARACTER SET utf8mb4 NOT NULL, ";
 			$sql .= "`username` varchar(25) CHARACTER SET utf8mb4 NOT NULL, ";
-			$sql .= "`password` varchar(100) CHARACTER SET utf8mb4 NOT NULL ";
+			$sql .= "`password` varchar(100) CHARACTER SET utf8mb4 NOT NULL";
 			$sql .= ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 
 			$result = mysqli_query($dbc, $sql);
