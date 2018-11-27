@@ -54,8 +54,8 @@
 			$sql .= "ALTER TABLE `sidebar_info` ADD PRIMARY KEY (`id`); ";
 			$sql .= "ALTER TABLE `sidebar_info` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4; ";
 
-			$sql .= "CREATE TABLE `projects` (`id` tinyint(6) UNSIGNED NOT NULL, `name` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `image` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `description` varchar(1000) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1; ";
-			$sql .= "ALTER TABLE `projects` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `image` (`image`); ";
+			$sql .= "CREATE TABLE `projects` (`id` tinyint(6) UNSIGNED NOT NULL, `name` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `url` varchar(10) CHARACTER SET utf8mb4 NOT NULL, `image` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `description` varchar(1000) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1; ";
+			$sql .= "ALTER TABLE `projects` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `image` (`image`), ADD UNIQUE KEY `url` (`url`); ";
 			$sql .= "ALTER TABLE `projects` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT; ";
 
 			$result = mysqli_multi_query($dbc, $sql);
