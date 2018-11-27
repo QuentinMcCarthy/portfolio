@@ -47,8 +47,14 @@
 			<div id="userSidebar" class="col-6 bg-dark text-light pt-2 pb-2">
 				<div class="row">
 					<div class="col d-flex align-items-center justify-content-between">
-						<img id="userImage" class="img-fluid" src="http://placehold.it/150x150" alt="User Portrait">
+						<div class="position-relative">
 							<img id="userImage" class="img-fluid" src="./assets/img/<?= $userImage ?>" alt="User Portrait">
+							<?php if(isset($_SESSION["username"])): ?>
+								<div id="userImageSelect" class="position-absolute justify-content-center align-content-center">
+									<i class="fas fa-camera fa-2x align-self-center"></i>
+								</div>
+							<?php endif; ?>
+						</div>
 
 						<h1 id="userName"><?= $userName ?></h1>
 					</div>
