@@ -65,8 +65,8 @@ ALTER TABLE `sidebar_info` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREME
 These commands are for creating the 'projects' table, which will contain the code for the information for each project.
 
 ```sql
-CREATE TABLE `projects` (`id` tinyint(6) UNSIGNED NOT NULL, `name` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `image` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `description` varchar(1000) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-ALTER TABLE `projects` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `image` (`image`);
+CREATE TABLE `projects` (`id` tinyint(6) UNSIGNED NOT NULL, `name` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `url` varchar(25) CHARACTER SET utf8mb4 NOT NULL, `image` varchar(100) CHARACTER SET utf8mb4 NOT NULL, `description` varchar(1000) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ALTER TABLE `projects` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `url` (`url`), ADD UNIQUE KEY `image` (`image`);
 ALTER TABLE `projects` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT;
 ```
 
