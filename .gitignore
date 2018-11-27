@@ -1,5 +1,8 @@
 # Blacklist
 vendor/
-project/
+project/*
 .DS_Store
 .env
+
+# Whitelist
+!project/force-upload-file.txt
