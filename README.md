@@ -48,7 +48,7 @@ INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (1, 'userImage'
 ```
 
 Customisation of these inputs isn't implemented into the db_init.php file yet, however during manual entry of these commands please change them as follows, DO NOT LEAVE THEM AS THEY ARE.
-$username will be the name that shows up in the sidebar, HTML tags apply so you can use <b> <em> <sup> etc etc.
+$username will be the name that shows up in the sidebar, HTML tags apply so you can use \<b\> \<em\> \<sup\> etc etc.
 $usercontent will be the content that shows up under the image and name, HTML tags apply.
 $userbehance is a link to your behance profile. Changing this to be blank will disable it if you do not have a behance profile.
 ```sql
