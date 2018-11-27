@@ -1,6 +1,6 @@
 # Quentin McCarthy Portfolio
 
-## Instructions to initalise
+## Instructions to initialise
 The db_init.php file has been created specifically to initalise the required databases in the back-end using SQL. If the db_init.php file fails for whatever reason, check that:
  - The name of the database in phpmyadmin and the DB_TABLE value in the .env file match
  - The DB_USER and DB_PASS values in the .env file are correct and the user has permissions in the database
