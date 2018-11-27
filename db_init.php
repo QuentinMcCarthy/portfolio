@@ -41,43 +41,25 @@
 
 			$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-			$sql = "CREATE TABLE `users` (";
-			$sql .= "`id` tinyint(6) UNSIGNED NOT NULL, ";
-			$sql .= "`email` varchar(254) CHARACTER SET utf8mb4 NOT NULL, ";
-			$sql .= "`username` varchar(25) CHARACTER SET utf8mb4 NOT NULL, ";
-			$sql .= "`password` varchar(100) CHARACTER SET utf8mb4 NOT NULL";
-			$sql .= ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+			$sql  = "CREATE TABLE `users` (`id` tinyint(6) UNSIGNED NOT NULL, `email` varchar(254) CHARACTER SET utf8mb4 NOT NULL, `username` varchar(25) CHARACTER SET utf8mb4 NOT NULL, `password` varchar(100) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1; ";
+			$sql .= "INSERT INTO `users` (`id`, `email`, `username`, `password`) VALUES (1, '$email', '$username', '$hashedPassword');";
+			$sql .= "ALTER TABLE `users` ADD PRIMARY KEY (`id`); ";
+			$sql .= "ALTER TABLE `users` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2; ";
 
-			$result = mysqli_query($dbc, $sql);
+			$sql .= "CREATE TABLE `sidebar_info` (`id` tinyint(6) UNSIGNED NOT NULL, `contentid` varchar(25) CHARACTER SET utf8mb4 NOT NULL, `content` varchar(1000) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1; ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (1, 'userImage', 'default-userimage.png'); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (2, 'userName', 'Lorem Ipsum'); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (3, 'userContent', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (4, 'userBehance', 'https://www.behance.net/qmccarthy9cc69'); ";
+			$sql .= "ALTER TABLE `sidebar_info` ADD PRIMARY KEY (`id`); ";
+			$sql .= "ALTER TABLE `sidebar_info` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4; ";
+
+			$result = mysqli_multi_query($dbc, $sql);
 
 			if($result){
-				$sql = "INSERT INTO `users` (`id`, `email`, `username`, `password`) VALUES (1, '$email', '$username', '$hashedPassword');";
-
-				$result = mysqli_query($dbc, $sql);
-
-				if($result && mysqli_affected_rows($dbc) > 0){
-					$sql = "ALTER TABLE `users` ADD PRIMARY KEY (`id`);";
-
-					$result = mysqli_query($dbc, $sql);
-
-					if($result){
-						$sql = "ALTER TABLE `users` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;";
-
-						$result = mysqli_query($dbc, $sql);
-
-						if($result && mysqli_affected_rows($dbc) > 0){
-							header("Refresh:2; URL=./index.php");
-						} else{
-							die("FATAL ERROR: DBC_ALTER_FAIL");
-						}
-					} else{
-						die("FATAL ERROR: DBC_ALTER_FAIL");
-					}
-				} else{
-					die("FATAL ERROR: DBC_INSERT_FAIL");
-				}
+				header("Refresh:2; URL=./index.php");
 			} else{
-				die("FATAL ERROR: DBC_CREATE_FAIL");
+				die("An error has occurred (DBC_FAIL_INIT)");
 			}
 		}
 	}

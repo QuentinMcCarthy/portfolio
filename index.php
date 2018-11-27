@@ -14,7 +14,7 @@
 				<!-- Sidebar content -->
 				<div class="row">
 					<div class="col pl-3 pr-3 pt-3">
-						<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p id="userContent" class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</div>
 				</div>
 
@@ -27,7 +27,7 @@
 						<?php else: ?>
 							<a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-2x"></i></a>
 						<?php endif; ?>
-						<a href="https://www.behance.net/qmccarthy9cc69"><i class="fab fa-behance-square fa-2x"></i></a>
+						<a id="userBehance" href="https://www.behance.net/qmccarthy9cc69"><i class="fab fa-behance-square fa-2x"></i></a>
 					</div>
 				</div>
 			</div>
