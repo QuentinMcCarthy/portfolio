@@ -22,6 +22,8 @@ This will take you to a text entry form. This is where we will enter the followi
 After every command, you will need to click 'Go' in the bottom right corner.
 Ensure that you enter these commands EXACTLY as per instructions and that you enter them IN ORDER.
 
+These commands are for creating the 'users' table, which will contain all users for the website, though more than likely only one.
+
 ```sql
 CREATE TABLE `users` (`id` tinyint(6) UNSIGNED NOT NULL, `email` varchar(254) CHARACTER SET utf8mb4 NOT NULL, `username` varchar(25) CHARACTER SET utf8mb4 NOT NULL, `password` varchar(100) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
@@ -36,6 +38,28 @@ INSERT INTO `users` (`id`, `email`, `username`, `password`) VALUES (1, '$email',
 ```sql
 ALTER TABLE `users` ADD PRIMARY KEY (`id`);
 ALTER TABLE `users` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+```
+
+These commands are for creating the 'sidebar_info' table, which will contain the code for the sidebar information on the user.
+
+```sql
+CREATE TABLE `sidebar_info` (`id` tinyint(6) UNSIGNED NOT NULL, `contentid` varchar(25) CHARACTER SET utf8mb4 NOT NULL, `content` varchar(1000) CHARACTER SET utf8mb4 NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (1, 'userImage', 'default-userimage.png');
+```
+
+Customisation of these inputs isn't implemented into the db_init.php file yet, however during manual entry of these commands please change them as follows, DO NOT LEAVE THEM AS THEY ARE.
+$username will be the name that shows up in the sidebar, HTML tags apply so you can use <b> <em> <sup> etc etc.
+$usercontent will be the content that shows up under the image and name, HTML tags apply.
+$userbehance is a link to your behance profile. Changing this to be blank will disable it if you do not have a behance profile.
+```sql
+INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (2, 'userName', '$username');
+INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (3, 'userContent', '$usercontent');
+INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (4, 'userBehance', '$userbehance');
+```
+
+```sql
+ALTER TABLE `sidebar_info` ADD PRIMARY KEY (`id`);
+ALTER TABLE `sidebar_info` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 ```
 
 If any of these commands fail, and you cannot confirm that they succeeded despite the error, do not continue
