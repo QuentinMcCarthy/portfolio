@@ -50,13 +50,22 @@
 						<div class="position-relative">
 							<img id="userImage" class="img-fluid" src="./assets/img/<?= $userImage ?>" alt="User Portrait">
 							<?php if(isset($_SESSION["username"])): ?>
-								<div id="userImageSelect" class="position-absolute justify-content-center align-content-center">
+								<div id="userImageEdit" class="d-flex position-absolute justify-content-center">
 									<i class="fas fa-camera fa-2x align-self-center"></i>
 								</div>
 							<?php endif; ?>
 						</div>
 
-						<h1 id="userName"><?= $userName ?></h1>
+						<div class="position-relative">
+							<h1 id="userName"><?= $userName ?></h1>
+							<?php if(isset($_SESSION["username"])): ?>
+								<div id="userNameEdit" class="position-absolute">
+									<div id="userNameEditBtn" class="d-none position-absolute justify-content-center">
+										<i class="fas fa-edit align-self-center"></i>
+									</div>
+								</div>
+							<?php endif; ?>
+						</div>
 					</div>
 				</div>
 
