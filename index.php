@@ -1,4 +1,46 @@
-<?php require "./includes/header.php"; ?>
+<?php
+	require "./includes/header.php";
+
+	$sql = "SELECT `contentid`, `content` FROM `sidebar_info`;";
+
+	$result = mysqli_query($dbc, $sql);
+
+	if($result){
+		$allInfo = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	} else {
+		die("An error has occurred (DBC_SEL_FAIL)");
+	}
+
+	$userImage   = "";
+	$userName    = "";
+	$userContent = "";
+	$userBehance = "";
+
+	foreach($allInfo as $info){
+		switch($info['contentid']){
+			case "userImage":
+				$userImage = $info['content'];
+
+				break;
+			case "userName":
+				$userName = $info['content'];
+
+				break;
+			case "userContent":
+				$userContent = $info['content'];
+
+				break;
+			case "userBehance":
+				$userBehance = $info['content'];
+
+				break;
+			default:
+				die("An error has occurred (INFO_UNKNOWN)");
+
+				break;
+		}
+	}
+?>
 	<div class="container-fluid pt-5 pb-5">
 		<div class="row">
 			<!-- Sidebar details for the user -->
@@ -6,15 +48,16 @@
 				<div class="row">
 					<div class="col d-flex align-items-center justify-content-between">
 						<img id="userImage" class="img-fluid" src="http://placehold.it/150x150" alt="User Portrait">
+							<img id="userImage" class="img-fluid" src="./assets/img/<?= $userImage ?>" alt="User Portrait">
 
-						<h1 id="userName">Quentin M<sup>c</sup>Carthy</h1>
+						<h1 id="userName"><?= $userName ?></h1>
 					</div>
 				</div>
 
 				<!-- Sidebar content -->
 				<div class="row">
 					<div class="col pl-3 pr-3 pt-3">
-						<p id="userContent" class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p id="userContent" class="text-justify"><?= $userContent ?></p>
 					</div>
 				</div>
 
@@ -27,7 +70,7 @@
 						<?php else: ?>
 							<a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-2x"></i></a>
 						<?php endif; ?>
-						<a id="userBehance" href="https://www.behance.net/qmccarthy9cc69"><i class="fab fa-behance-square fa-2x"></i></a>
+						<a id="userBehance" href="<?= $userBehance ?>"><i class="fab fa-behance-square fa-2x"></i></a>
 					</div>
 				</div>
 			</div>
