@@ -5,4 +5,4 @@ project/*
 .env
 
 # Whitelist
-!project/force-upload-file.txt
+!project/index.php
