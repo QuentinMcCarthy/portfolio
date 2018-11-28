@@ -55,6 +55,10 @@ a:hover {
 	max-width: 450px;
 }
 
+#userImageContainer {
+	max-width: 39%;
+}
+
 #userImage {
 	border-radius: 100%;
 }

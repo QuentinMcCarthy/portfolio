@@ -17,7 +17,11 @@
 	foreach($allInfo as $info){
 		switch($info['contentid']){
 			case "userImage":
-				$userImage = $info['content'];
+				if($info['content'] == "default-userimage.png"){
+					$userImage = "./assets/img/".$info['content'];
+				} else{
+					$userImage = "./uploads/sidebar/".$info['content'];
+				}
 
 				break;
 			case "userName":
@@ -43,8 +47,8 @@
 <div id="userSidebar" class="col-6 bg-dark text-light pt-2 pb-2">
 	<div class="row">
 		<div class="col d-flex align-items-center justify-content-between">
-			<div class="position-relative">
-				<img id="userImage" class="img-fluid" src="./assets/img/<?= $userImage ?>" alt="User Portrait">
+			<div id="userImageContainer" class="position-relative">
+				<img id="userImage" class="img-fluid" src="<?= $userImage ?>" alt="User Portrait">
 				<?php if(isset($_SESSION["username"])): ?>
 					<div id="userImageEdit" class="d-flex position-absolute justify-content-center">
 						<i class="fas fa-camera fa-2x align-self-center"></i>

@@ -1,6 +1,7 @@
 # Blacklist
 vendor/
 project/*
+uploads/
 .DS_Store
 .env
 
