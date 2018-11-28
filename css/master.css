@@ -2,7 +2,8 @@
 	1.0:- Base styles
 	2.0:- Global styles
 	3.0:- Sidebar
-	4.0:- FontAwesome Icon Styles
+	4.0:- Projects
+	5.0:- FontAwesome Icon Styles
 */
 
 /* 1.0:- Base Styles */
@@ -43,6 +44,10 @@ a:hover {
 
 
 /* 2.0:- Global Styles */
+#web-container {
+	min-width: 1075px;
+}
+
 .post-errors-list {
 	list-style: none;
 	padding-left: 0;
@@ -106,7 +111,35 @@ a:hover {
 }
 
 
-/* 4.0:- FontAwesome Icon Styles */
+/* 4.0:- Projects */
+#allProjects {
+	min-width: 625px;
+}
+
+.project-image {
+	width: 100%;
+}
+
+.project-info {
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: #ffffff;
+	opacity: 0;
+	overflow: hidden;
+}
+.project-info:hover {
+	opacity: .75;
+}
+
+.project a {
+	color: black;
+}
+.project a:hover {
+	text-decoration: none;
+}
+
+/* 5.0:- FontAwesome Icon Styles */
 .fa-behance-square {
 	color: #1476F7;
 }
