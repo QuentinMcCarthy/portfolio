@@ -50,7 +50,7 @@
 			<div id="userImageContainer" class="position-relative">
 				<img id="userImage" class="img-fluid" src="<?= $userImage ?>" alt="User Portrait">
 				<?php if(isset($_SESSION["username"])): ?>
-					<div id="userImageEdit" class="d-flex position-absolute justify-content-center">
+					<div id="userImageEdit" class="edit-container d-flex position-absolute justify-content-center">
 						<i class="fas fa-camera fa-2x align-self-center"></i>
 					</div>
 				<?php endif; ?>
@@ -59,8 +59,8 @@
 			<div class="position-relative">
 				<h1 id="userName"><?= $userName ?></h1>
 				<?php if(isset($_SESSION["username"])): ?>
-					<div id="userNameEdit" class="position-absolute">
-						<div id="userNameEditBtn" class="d-none position-absolute justify-content-center">
+					<div class="edit-container position-absolute">
+						<div class="edit-btn d-none position-absolute justify-content-center">
 							<i class="fas fa-edit align-self-center"></i>
 						</div>
 					</div>
@@ -73,6 +73,13 @@
 	<div class="row">
 		<div class="col pl-3 pr-3 pt-3">
 			<p id="userContent" class="text-justify"><?= $userContent ?></p>
+			<?php if(isset($_SESSION["username"])): ?>
+				<div class="edit-container position-absolute">
+					<div class="edit-btn d-none position-absolute justify-content-center">
+						<i class="fas fa-edit align-self-center"></i>
+					</div>
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 
