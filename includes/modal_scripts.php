@@ -18,8 +18,14 @@
 			if(isset($_POST['nameEdit']) && !empty($errors)){
 				$reopenNameEditModal = "true";
 			}
+
+			$reopenContentEditModal = "false";
+
+			if(isset($_POST['contentEdit']) && !empty($errors)){
+				$reopenContentEditModal = "true";
+			}
 		?>
-		
+
 		if(<?= $reopenLoginModal; ?>){
 			$("#loginModal").modal("show");
 		}
@@ -30,6 +36,10 @@
 
 		if(<?= $reopenNameEditModal; ?>){
 			$("#nameEditModal").modal("show");
+		}
+
+		if(<?= $reopenContentEditModal; ?>){
+			$("#contentEditModal").modal("show");
 		}
 	});
 </script>
