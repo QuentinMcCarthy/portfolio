@@ -1,7 +1,12 @@
 		<!-- Modals -->
 		<?php
-			require "./includes/modal_login.php";
-			require "./includes/modal_logout.php";
+			$modalFiles = glob("./includes/modal_*.php");
+
+			foreach($modalFiles as $modalFile){
+				if(!strpos($modalFile, "scripts.php")){
+					require $modalFile;
+				}
+			}
 		?>
 
 		<!-- jQuery -->
