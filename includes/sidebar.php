@@ -60,7 +60,7 @@
 				<h1 id="userName"><?= $userName ?></h1>
 				<?php if(isset($_SESSION["username"])): ?>
 					<div class="edit-container position-absolute">
-						<div class="edit-btn d-none position-absolute justify-content-center">
+						<div class="edit-btn d-none position-absolute justify-content-center" data-toggle="modal" data-target="#nameEditModal">
 							<i class="fas fa-edit align-self-center"></i>
 						</div>
 					</div>

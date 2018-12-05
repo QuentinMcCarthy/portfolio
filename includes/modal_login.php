@@ -26,8 +26,8 @@
 			array_push($errors, "An error has ocurred, please try again later (DBC_SEL_FAIL)");
 		}
 
-		if ( empty( $errors ) ) {
-			wp_create_user( $username, $password, $email );
+		if(empty($errors)){
+			wp_create_user($username, $password, $email);
 
 			$success = true;
 		}
@@ -58,7 +58,7 @@
 				<form action="index.php" method="post">
 					<div class="form-group">
 						<label for="username">Username</label>
-						<input type="text" name="username" class="form-control" value="<?php if(isset($_POST["username"])){ echo $_POST["username"]; } ?>">
+						<input type="text" name="username" class="form-control" value="<?php if(isset($_POST['username'])){ echo $_POST['username']; } ?>">
 					</div>
 
 					<div class="form-group">
