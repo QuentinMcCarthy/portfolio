@@ -73,6 +73,7 @@ a:hover {
 	opacity: 0;
 	cursor: pointer;
 }
+
 #userImageEdit:hover {
 	background-color: #000000;
 	opacity: .5;
@@ -125,6 +126,7 @@ a:hover {
 	opacity: 0;
 	overflow: hidden;
 }
+
 .project-info:hover {
 	opacity: .75;
 }
@@ -132,6 +134,7 @@ a:hover {
 .project a {
 	color: black;
 }
+
 .project a:hover {
 	text-decoration: none;
 }
