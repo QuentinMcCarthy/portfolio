@@ -9,7 +9,7 @@
 		var_dump("(DBC_SEL_FAIL)");
 	}
 
-	if($_POST && isset($_POST["nameEdit"])){
+	if($_POST && isset($_POST['nameEdit'])){
 		$errors = array();
 
 		extract($_POST);

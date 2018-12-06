@@ -20,7 +20,7 @@
 				if($info['content'] == "default-userimage.png"){
 					$userImage = "./assets/img/".$info['content'];
 				} else{
-					$userImage = "./uploads/sidebar/".$info['content'];
+					$userImage = "./uploads/sidebar/resized-".$info['content'];
 				}
 
 				break;
@@ -50,7 +50,7 @@
 			<div id="userImageContainer" class="position-relative">
 				<img id="userImage" class="img-fluid" src="<?= $userImage ?>" alt="User Portrait">
 				<?php if(isset($_SESSION["username"])): ?>
-					<div id="userImageEdit" class="edit-container d-flex position-absolute justify-content-center">
+					<div id="userImageEdit" class="edit-container d-flex position-absolute justify-content-center" data-toggle="modal" data-target="#imageEditModal">
 						<i class="fas fa-camera fa-2x align-self-center"></i>
 					</div>
 				<?php endif; ?>

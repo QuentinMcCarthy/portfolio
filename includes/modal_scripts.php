@@ -24,6 +24,12 @@
 			if(isset($_POST['contentEdit']) && !empty($errors)){
 				$reopenContentEditModal = "true";
 			}
+
+			$reopenImageEditModal = "false";
+
+			if(isset($_POST['imageEdit']) && !empty($errors)){
+				$reopenImageEditModal = "true";
+			}
 		?>
 
 		if(<?= $reopenLoginModal; ?>){
@@ -40,6 +46,10 @@
 
 		if(<?= $reopenContentEditModal; ?>){
 			$("#contentEditModal").modal("show");
+		}
+
+		if(<?= $reopenImageEditModal ?>){
+			$("#imageEditModal").modal("show");
 		}
 	});
 </script>
