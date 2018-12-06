@@ -26,7 +26,9 @@
 			$result = mysqli_query($dbc, $sql);
 
 			if($result && mysqli_affected_rows($dbc) > 0){
-				header("Refresh:0;URL=./index.php");
+				// Use meta redirect to prevent header error.
+				// header("Refresh:0;URL=./index.php");
+				echo "<meta http-equiv='refresh' content='0; url=./index.php'>";
 			}
 		}
 	}

@@ -21,12 +21,14 @@
 		if(empty($errors)){
 			$newContent = mysqli_real_escape_string($dbc, $changedContent);
 
-			$sql = "UPDATE `sidebar_info` SET `content`='$newContent' WHERE `contentid`='userContent''";
+			$sql = "UPDATE `sidebar_info` SET `content`='$newContent' WHERE `contentid`='userContent'";
 
 			$result = mysqli_query($dbc, $sql);
 
 			if($result && mysqli_affected_rows($dbc) > 0){
-				header("Refresh:0;URL=./index.php");
+				// Use meta redirect to prevent header error.
+				// header("Refresh:0;URL=./index.php");
+				echo "<meta http-equiv='refresh' content='0; url=./index.php'>";
 			}
 		}
 	}

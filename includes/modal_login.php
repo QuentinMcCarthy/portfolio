@@ -16,7 +16,9 @@
 				$_SESSION["timeout"]=time();
 				$_SESSION["username"]=$username;
 
-				header("Location: index.php");
+				// Use meta redirect to prevent header error.
+				// header("Refresh:0;URL=./index.php");
+				echo "<meta http-equiv='refresh' content='0; url=./index.php'>";
 			} else{
 				array_push($errors, "Incorrect password");
 			}
