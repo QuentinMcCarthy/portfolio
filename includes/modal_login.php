@@ -25,12 +25,6 @@
 		} else{
 			array_push($errors, "An error has ocurred, please try again later (DBC_SEL_FAIL)");
 		}
-
-		if(empty($errors)){
-			wp_create_user($username, $password, $email);
-
-			$success = true;
-		}
 	}
 ?>
 

@@ -1,9 +1,12 @@
 		<!-- Modals -->
 		<?php
+			// Login modal must be loaded first due to header information
+			require "./includes/modal_login.php";
+
 			$modalFiles = glob("./includes/modal_*.php");
 
 			foreach($modalFiles as $modalFile){
-				if(!strpos($modalFile, "scripts.php")){
+				if(!strpos($modalFile, "scripts.php") && !strpos($modalFile, "modal_login.php")){
 					require $modalFile;
 				}
 			}
