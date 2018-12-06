@@ -50,7 +50,11 @@
 			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (1, 'userImage', 'default-userimage.png'); ";
 			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (2, 'userName', 'Lorem Ipsum'); ";
 			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (3, 'userContent', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'); ";
-			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (4, 'userBehance', ''); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (4, 'userGithub', ''); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (5, 'userFacebook', ''); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (6, 'userGoogle', ''); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (7, 'userBehance', ''); ";
+			$sql .= "INSERT INTO `sidebar_info` (`id`, `contentid`, `content`) VALUES (8, 'userLinkedin', ''); ";
 			$sql .= "ALTER TABLE `sidebar_info` ADD PRIMARY KEY (`id`); ";
 			$sql .= "ALTER TABLE `sidebar_info` MODIFY `id` tinyint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4; ";
 

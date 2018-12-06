@@ -5,42 +5,62 @@
 
 	if($result){
 		$allInfo = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+		$userImage    = "";
+		$userName     = "";
+		$userContent  = "";
+		$userGithub   = "";
+		$userFacebook = "";
+		$userGoogle   = "";
+		$userBehance  = "";
+		$userLinkedin = "";
+
+		foreach($allInfo as $info){
+			switch($info['contentid']){
+				case "userImage":
+					if($info['content'] == "default-userimage.png"){
+						$userImage = "./assets/img/".$info['content'];
+					} else{
+						$userImage = "./uploads/sidebar/resized-".$info['content'];
+					}
+
+					break;
+				case "userName":
+					$userName = $info['content'];
+
+					break;
+				case "userContent":
+					$userContent = $info['content'];
+
+					break;
+				case "userGithub":
+					$userGithub = $info['content'];
+
+					break;
+				case "userFacebook":
+					$userFacebook = $info['content'];
+
+					break;
+				case "userGoogle":
+					$userGoogle = $info['content'];
+
+					break;
+				case "userBehance":
+					$userBehance = $info['content'];
+
+					break;
+				case "userLinkedin":
+					$userLinkedin = $info['content'];
+
+					break;
+				default:
+					die("An error has occurred (INFO_UNKNOWN)");
+
+					break;
+			}
+		}
 	} else {
 		die("An error has occurred (DBC_SEL_FAIL)");
-	}
-
-	$userImage   = "";
-	$userName    = "";
-	$userContent = "";
-	$userBehance = "";
-
-	foreach($allInfo as $info){
-		switch($info['contentid']){
-			case "userImage":
-				if($info['content'] == "default-userimage.png"){
-					$userImage = "./assets/img/".$info['content'];
-				} else{
-					$userImage = "./uploads/sidebar/resized-".$info['content'];
-				}
-
-				break;
-			case "userName":
-				$userName = $info['content'];
-
-				break;
-			case "userContent":
-				$userContent = $info['content'];
-
-				break;
-			case "userBehance":
-				$userBehance = $info['content'];
-
-				break;
-			default:
-				die("An error has occurred (INFO_UNKNOWN)");
-
-				break;
-		}
 	}
 ?>
 
@@ -93,8 +113,24 @@
 				<a href="#" data-toggle="modal" data-target="#logoutModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-sign-out-alt fa-2x"></i></a>
 			<?php endif; ?>
 
+			<?php if(strlen($userGithub) > 0): ?>
+				<a id="userGithub" href="<?= $userGithub; ?>"><i class="fab fa-github fa-2x"></i></a>
+			<?php endif; ?>
+
+			<?php if(strlen($userFacebook) > 0): ?>
+				<a id="userFacebook" href="<?= $userFacebook; ?>"><i class="fab fa-facebook fa-2x"></i></a>
+			<?php endif; ?>
+
+			<?php if(strlen($userGoogle) > 0): ?>
+				<a id="userGoogle" href="<?= $userGoogle; ?>"><i class="fab fa-google-plus fa-2x"></i></a>
+			<?php endif; ?>
+
 			<?php if(strlen($userBehance) > 0): ?>
-				<a id="userBehance" href="<?= $userBehance ?>"><i class="fab fa-behance-square fa-2x"></i></a>
+				<a id="userBehance" href="<?= $userBehance; ?>"><i class="fab fa-behance-square fa-2x"></i></a>
+			<?php endif; ?>
+
+			<?php if(strlen($userLinkedin) > 0): ?>
+				<a id="userLinkedin" href="<?= $userLinkedin; ?>"><i class="fab fa-linkedin fa-2x"></i></a>
 			<?php endif; ?>
 		</div>
 	</div>

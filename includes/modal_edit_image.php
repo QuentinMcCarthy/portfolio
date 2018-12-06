@@ -1,17 +1,16 @@
 <?php
 	use Intervention\Image\ImageManager;
 
-	$sql = "SELECT * FROM `sidebar_info` WHERE contentid='userImage'";
+	$sql = "SELECT * FROM `sidebar_info` WHERE `contentid`='userImage'";
 
 	$result = mysqli_query($dbc, $sql);
 
 	if($result && mysqli_affected_rows($dbc) > 0){
 		$userInfo = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-		$id = $userInfo['id'];
 		$originalImage = $userInfo['content'];
 	} else{
-		var_dump("(DBC_SEL_FAIL)");
+		die("An error has occurred (DBC_SEL_FAIL)");
 	}
 
 	if($_POST && isset($_POST['imageEdit'])){
@@ -51,7 +50,7 @@
 
 				$filename = mysqli_real_escape_string($dbc, $newFileName);
 
-				$sql = "UPDATE `sidebar_info` SET `content`='$filename' WHERE id=$id";
+				$sql = "UPDATE `sidebar_info` SET `content`='$filename' WHERE `contentid`='userImage'";
 			}
 
 			$result = mysqli_query($dbc, $sql);
@@ -85,7 +84,7 @@
 				// header("Refresh:0;URL=./index.php");
 				echo "<meta http-equiv='refresh' content='0; url=./index.php'>";
 			} else{
-				array_push($errors, "Failed to update database, please try again later (DBC_UPDATE_FAIL)");
+				array_push($errors, "An error has occurred (DBC_UPDATE_FAIL)");
 			}
 		}
 	}

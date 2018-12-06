@@ -1,12 +1,12 @@
 <?php
-	$sql = "SELECT * FROM `sidebar_info` WHERE contentid = 'userContent'";
+	$sql = "SELECT * FROM `sidebar_info` WHERE `contentid`='userContent'";
 
 	$result = mysqli_query($dbc, $sql);
 
 	if($result && mysqli_affected_rows($dbc) > 0){
 		$userInfo = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	} else{
-		var_dump("(DBC_SEL_FAIL)");
+		die("An error has occurred (DBC_SEL_FAIL)");
 	}
 
 	if($_POST && isset($_POST['contentEdit'])){
@@ -21,9 +21,7 @@
 		if(empty($errors)){
 			$newContent = mysqli_real_escape_string($dbc, $changedContent);
 
-			$id = $userInfo['id'];
-
-			$sql = "UPDATE `sidebar_info` SET `content`='$newContent' WHERE `id`=$id";
+			$sql = "UPDATE `sidebar_info` SET `content`='$newContent' WHERE `contentid`='userContent''";
 
 			$result = mysqli_query($dbc, $sql);
 
