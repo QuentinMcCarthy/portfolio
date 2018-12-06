@@ -79,11 +79,6 @@ a:hover {
 	opacity: .5;
 }
 
-#userName {
-	/* Arimo google font specified in header.php */
-	font-family: Arimo, Helvetica, Arial, sans-serif;
-}
-
 #userGithub {
 	color: #fff;
 }
