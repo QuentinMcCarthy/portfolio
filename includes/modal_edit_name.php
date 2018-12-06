@@ -54,7 +54,7 @@
 					</div>
 				<?php endif; ?>
 
-				<form action="index.php" method="post">
+				<form action="index.php" method="post" autocomplete="off">
 					<div class="form-group">
 						<label for="changedName">Name</label>
 						<input type="text" name="changedName" class="form-control" value="<?php if(isset($_POST['changedName'])){ echo $_POST['changedName']; } else { echo $userInfo["content"]; } ?>">

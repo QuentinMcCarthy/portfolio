@@ -50,7 +50,7 @@
 					</div>
 				<?php endif; ?>
 
-				<form action="index.php" method="post">
+				<form action="index.php" method="post" autocomplete="off">
 					<div class="form-group">
 						<label for="username">Username</label>
 						<input type="text" name="username" class="form-control" value="<?php if(isset($_POST['username'])){ echo $_POST['username']; } ?>">
