@@ -40,7 +40,6 @@
 			<!-- Modal Header -->
 			<div class="modal-header">
 				<h5 class="modal-title">Bio Edit</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
 			</div>
 
 			<!-- Modal Body -->

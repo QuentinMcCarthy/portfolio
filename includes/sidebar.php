@@ -50,7 +50,7 @@
 			<div id="userImageContainer" class="position-relative">
 				<img id="userImage" class="img-fluid" src="<?= $userImage ?>" alt="User Portrait">
 				<?php if(isset($_SESSION["username"])): ?>
-					<div id="userImageEdit" class="edit-container d-flex position-absolute justify-content-center" data-toggle="modal" data-target="#imageEditModal">
+					<div id="userImageEdit" class="edit-container d-flex position-absolute justify-content-center" data-toggle="modal" data-target="#imageEditModal" data-backdrop="static" data-keyboard="false">
 						<i class="fas fa-camera fa-2x align-self-center"></i>
 					</div>
 				<?php endif; ?>
@@ -60,7 +60,7 @@
 				<h1 id="userName"><?= $userName ?></h1>
 				<?php if(isset($_SESSION["username"])): ?>
 					<div class="edit-container position-absolute">
-						<div class="edit-btn d-none position-absolute justify-content-center" data-toggle="modal" data-target="#nameEditModal">
+						<div class="edit-btn d-none position-absolute justify-content-center" data-toggle="modal" data-target="#nameEditModal" data-backdrop="static" data-keyboard="false">
 							<i class="fas fa-edit align-self-center"></i>
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 			<p id="userContent" class="text-justify"><?= $userContent ?></p>
 			<?php if(isset($_SESSION["username"])): ?>
 				<div class="edit-container position-absolute">
-					<div class="edit-btn d-none position-absolute justify-content-center" data-toggle="modal" data-target="#contentEditModal">
+					<div class="edit-btn d-none position-absolute justify-content-center" data-toggle="modal" data-target="#contentEditModal" data-backdrop="static" data-keyboard="false">
 						<i class="fas fa-edit align-self-center"></i>
 					</div>
 				</div>
@@ -88,9 +88,9 @@
 		<div class="col">
 			<hr>
 			<?php if(empty($_SESSION["username"])): ?>
-				<a href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt fa-2x"></i></a>
+				<a href="#" data-toggle="modal" data-target="#loginModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-sign-in-alt fa-2x"></i></a>
 			<?php else: ?>
-				<a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+				<a href="#" data-toggle="modal" data-target="#logoutModal" data-backdrop="static" data-keyboard="false"><i class="fas fa-sign-out-alt fa-2x"></i></a>
 			<?php endif; ?>
 
 			<?php if(strlen($userBehance) > 0): ?>
